@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-// PROBLEM A
 
+
+// PROBLEM A
 
 int main() {
     int N;
@@ -40,6 +41,7 @@ else{
     return 0;
 }
 
+
 // PROBLEM M
 
 #include <stdio.h>
@@ -48,13 +50,12 @@ else{
 int compare(const void *a, const void *b){
     return (*(int *)a - *(int *)b);
 }
-//max strength of weakest team function
 int meow(int N, int *skilz){
-//sort in ascending order
+    
     qsort(skilz, 3 * N, sizeof(int), compare);
 
     int min = skilz[N];
-//find min median
+
     for (int i = N; i < 3 * N; i += 2){
         if (skilz[i] < min){
             min = skilz[i];
@@ -65,19 +66,19 @@ int meow(int N, int *skilz){
 
 int main(){
     int N;
-//    get N
+
     scanf("%d", &N);
     int A[3 * N];
-//    get A for i is less than 3N
+
     for (int i = 0; i < 3 * N; i++){
         scanf("%d", &A[i]);
     }
 
-//print result afer finding out the minimum
     int result = meow(N, A);
     printf("%d\n", result);
     return 0;
 }
+
 
 // pROBLEM E
 
@@ -120,6 +121,7 @@ printf("Failed to read.\n");
 }
     return 0;
 }
+
 
 
 
